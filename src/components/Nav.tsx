@@ -4,8 +4,6 @@ const links = [
   { label: 'Summary', href: '#summary' },
   { label: 'Experience', href: '#experience' },
   { label: 'Skills', href: '#skills' },
-  { label: 'Education', href: '#education' },
-  { label: 'Certifications', href: '#certifications' },
 ];
 
 export default function Nav() {

@@ -2,20 +2,20 @@ import { SectionLabel } from './Summary';
 
 const skillGroups = [
   {
-    category: 'Leadership & Strategy',
-    skills: ['IT Strategy', 'Digital Transformation', 'Budget Management', 'OKR/KPI Frameworks', 'Vendor Negotiation', 'Executive Communication', 'Team Building', 'Change Management'],
+    category: 'Business Analysis & Delivery',
+    skills: ['Requirements Gathering & Analysis', 'Business Process Mapping & Improvement', 'Functional Specifications', 'SDLC Delivery (Design, UAT, Deployment)', 'Stakeholder Engagement & Vendor Management'],
   },
   {
-    category: 'Cloud & Infrastructure',
-    skills: ['AWS', 'Azure', 'Google Cloud', 'VMware vSphere', 'Terraform', 'Kubernetes', 'Docker', 'Cisco Networking', 'SD-WAN', 'BGP/OSPF'],
+    category: 'Enterprise Systems & Data',
+    skills: ['ERP (Microsoft Dynamics NAV / Business Central)', 'System Integration (API, EDI, SFTP)', 'Data Analysis & Reporting (SQL, SSRS)', 'Automation & Workflow Optimisation', 'Data Governance'],
   },
   {
-    category: 'Security & Compliance',
-    skills: ['Zero Trust Architecture', 'SIEM / SOC Operations', 'ISO 27001', 'SOC 2', 'NIST Framework', 'PCI-DSS', 'Incident Response', 'Pen Testing Oversight'],
+    category: 'Platforms & Technology',
+    skills: ['Microsoft 365 & Business Applications', 'Virtualisation (Hyper-V, Citrix, RDS, AVD)', 'Infrastructure & Systems Administration', 'Email Security (Mimecast)', 'SD-WAN'],
   },
   {
-    category: 'Platforms & Tooling',
-    skills: ['ServiceNow', 'Jira', 'Confluence', 'Datadog', 'Splunk', 'Active Directory', 'Microsoft 365', 'GitHub Actions', 'Jenkins', 'Ansible'],
+    category: 'Programming & Scripting',
+    skills: ['SQL', 'PowerShell', 'EDI', 'SFTP', 'API Development', '.NET'],
   },
 ];
 

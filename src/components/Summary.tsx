@@ -1,8 +1,8 @@
 const stats = [
-  { value: '15+', label: 'Years Experience' },
-  { value: '200+', label: 'Team Members Led' },
-  { value: '$40M', label: 'IT Budget Managed' },
-  { value: '99.9%', label: 'Uptime Delivered' },
+  { value: '4+', label: 'Years IT Management' },
+  { value: '~300', label: 'Users Supported' },
+  { value: '15+', label: 'Years IT Professional' },
+  { value: '99.95%', label: 'Uptime Achieved' },
 ];
 
 export default function Summary() {
@@ -11,7 +11,7 @@ export default function Summary() {
       <div className="max-w-5xl mx-auto">
         <SectionLabel>Professional Summary</SectionLabel>
         <p className="text-slate-600 text-lg leading-relaxed max-w-3xl mt-4 mb-12">
-          Strategic IT leader with a proven record of aligning technology with business objectives. Adept at leading enterprise-wide infrastructure modernization, cloud migrations, cybersecurity programs, and building high-functioning engineering teams. Known for clear communication with C-suite stakeholders and a hands-on approach to solving complex technical challenges.
+          IT professional with a blend of strategic leadership and hands-on technical experience across ERP systems, infrastructure, and day-to-day IT operations within foodservice and distribution environments. Experienced in balancing IT leadership responsibilities with active involvement in frontline support, system administration, and technical problem solving. Strong capability across SQL, PowerShell, and infrastructure platforms including Hyper-V virtualisation and multi-site environments connected via SD-WAN.
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((s) => (
