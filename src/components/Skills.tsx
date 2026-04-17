@@ -11,11 +11,11 @@ const skillGroups = [
   },
   {
     category: 'Platforms & Technology',
-    skills: ['Microsoft 365 & Business Applications', 'Virtualisation (Hyper-V, Citrix, RDS, AVD)', 'Infrastructure & Systems Administration', 'Email Security (Mimecast)', 'SD-WAN'],
+    skills: ['Microsoft 365 & Business Applications', 'Virtualisation (Hyper-V, Citrix, RDS, AVD)', 'Infrastructure & Systems Administration', 'SQL Reporting Services', 'Jet Enterprise', 'PowerBI', 'Power Platforms', 'Phocas BI', 'Email Security (Mimecast)', 'Firewall (Fortinet)', 'SCVMM', 'DNS', 'Networking (CCNA)'],
   },
   {
     category: 'Programming & Scripting',
-    skills: ['SQL', 'PowerShell', 'EDI', 'SFTP', 'API Development', '.NET'],
+    skills: ['SQL', 'PowerShell', 'C#', 'C/AL & AL', 'EDIFact', '.NET', 'React.js', 'XML', '...and much more'],
   },
 ];
 
