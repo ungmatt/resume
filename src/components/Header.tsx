@@ -7,13 +7,13 @@ export default function Header() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
           <div>
             <p className="text-sky-400 text-sm font-semibold tracking-widest uppercase mb-3">
-              IT Professional | Systems Analyst
+              Senior Manager | IT Consultant | Systems Analyst
             </p>
             <h1 className="text-5xl md:text-6xl font-light tracking-tight mb-4">
               Matthew Ung
             </h1>
             <p className="text-slate-400 text-lg max-w-xl leading-relaxed">
-              AI & Automation | Cybersecurity | ERP | Data Integration | Process Improvement
+              Enabling scalable, high-performing operations through aligned systems, data, and disciplined execution.
             </p>
           </div>
           <div className="flex flex-col gap-3 text-slate-300 text-sm shrink-0">
