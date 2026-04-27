@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matthew Ung — IT Manager & Systems Leader</title>
+  <title>Matthew Ung — IT Strategy & Transformation for Growing Foodservice Businesses</title>
   <style>
     * {
       margin: 0;
@@ -15,12 +15,15 @@
       --primary: #0f172a;
       --secondary: #1e293b;
       --accent: #0ea5e9;
+      --accent-dark: #0284c7;
       --text-primary: #0f172a;
       --text-secondary: #64748b;
       --text-light: #cbd5e1;
       --bg-light: #f8fafc;
+      --bg-lighter: #f1f5f9;
       --border: #e2e8f0;
       --white: #ffffff;
+      --success: #10b981;
     }
 
     html {
@@ -41,11 +44,17 @@
     }
 
     a:hover {
-      color: #0284c7;
+      color: var(--accent-dark);
     }
 
     .container {
-      max-width: 48rem;
+      max-width: 56rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .container-wide {
+      max-width: 64rem;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
@@ -127,27 +136,80 @@
       position: sticky;
       top: 0;
       z-index: 40;
-      padding: 1rem 0;
+      padding: 0.75rem 0;
     }
 
     nav .container {
       display: flex;
       gap: 2rem;
+      overflow-x: auto;
     }
 
     nav a {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 500;
       color: var(--text-secondary);
       padding: 0.5rem 0;
       border-bottom: 2px solid transparent;
       transition: all 0.2s;
+      white-space: nowrap;
     }
 
     nav a:hover,
     nav a.active {
       color: var(--accent);
       border-bottom-color: var(--accent);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 4rem 1.5rem;
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.03) 0%, rgba(14, 165, 233, 0.03) 100%);
+    }
+
+    .hero .container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .hero-headline {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--text-primary);
+    }
+
+    .hero-subheadline {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 42rem;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--accent);
+      color: var(--white);
+      border-radius: 0.5rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: background 0.2s;
+      width: fit-content;
+    }
+
+    .hero-cta:hover {
+      background: var(--accent-dark);
+      color: var(--white);
     }
 
     /* Main content */
@@ -182,7 +244,7 @@
     }
 
     h2 {
-      font-size: 1.875rem;
+      font-size: 2rem;
       font-weight: 300;
       color: var(--text-primary);
       margin-top: 0.5rem;
@@ -193,7 +255,12 @@
       font-size: 1.125rem;
       font-weight: 600;
       color: var(--text-primary);
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    h3:first-child {
+      margin-top: 0;
     }
 
     .subtitle {
@@ -212,7 +279,128 @@
       margin-bottom: 1rem;
     }
 
-    /* Summary stats */
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .service-card {
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.75rem;
+      background: var(--white);
+      transition: all 0.2s;
+    }
+
+    .service-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.1);
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    /* Article */
+    .article {
+      margin-bottom: 3rem;
+      padding: 2rem;
+      background: var(--bg-lighter);
+      border-radius: 0.75rem;
+      border-left: 4px solid var(--accent);
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .article h3 {
+      margin-top: 0;
+      font-size: 1.375rem;
+      margin-bottom: 1rem;
+    }
+
+    .article-body {
+      font-size: 0.975rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    .article-body p {
+      margin-bottom: 1rem;
+    }
+
+    .article-body strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .article-body ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .article-body li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Expertise Grid */
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .expertise-item {
+      padding: 1.25rem;
+      background: var(--bg-light);
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+
+    .expertise-item:hover {
+      border-color: var(--accent);
+      background: rgba(14, 165, 233, 0.05);
+    }
+
+    .expertise-item strong {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 0.75rem;
+    }
+
+    .expertise-item p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--text-primary);
+    }
+
+    /* Stats */
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
@@ -249,16 +437,43 @@
       color: var(--text-secondary);
     }
 
-    /* Summary text */
-    .summary-text {
-      font-size: 1rem;
-      line-height: 1.7;
-      color: var(--text-secondary);
-      max-width: 42rem;
-      margin-bottom: 2rem;
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
     }
 
-    /* Jobs */
+    .gallery-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      overflow: hidden;
+      border-radius: 0.75rem;
+      background: var(--white);
+      transition: transform 0.2s;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-2px);
+    }
+
+    .gallery-image {
+      width: 100%;
+      height: 14rem;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-caption {
+      padding: 1rem;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--text-secondary);
+    }
+
+    /* Skills and Resume Sections */
     .job {
       margin-bottom: 2.5rem;
       padding-bottom: 2.5rem;
@@ -308,7 +523,41 @@
       margin-top: 0.2rem;
     }
 
-    /* Skills */
+    .achievements {
+      background: var(--bg-light);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .achievements h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .achievements-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .achievement-item {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    .achievement-icon {
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+      font-weight: 600;
+    }
+
     .skills-group {
       margin-bottom: 2rem;
     }
@@ -344,42 +593,6 @@
       border-color: var(--accent);
       color: var(--accent);
       background: rgba(14, 165, 233, 0.05);
-    }
-
-    /* Achievements */
-    .achievements {
-      background: var(--bg-light);
-      border-radius: 0.75rem;
-      padding: 2rem;
-      margin-top: 2rem;
-    }
-
-    .achievements h4 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 1.25rem;
-      color: var(--text-primary);
-    }
-
-    .achievements-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .achievement-item {
-      display: flex;
-      gap: 0.75rem;
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: var(--text-secondary);
-    }
-
-    .achievement-icon {
-      color: var(--accent);
-      flex-shrink: 0;
-      margin-top: 0.2rem;
-      font-weight: 600;
     }
 
     /* Footer */
@@ -423,7 +636,7 @@
     }
 
     .footer-cta:hover {
-      background: #0284c7;
+      background: var(--accent-dark);
       color: var(--white);
     }
 
@@ -441,8 +654,17 @@
         padding: 2rem 1.5rem;
       }
 
+      header .container {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
       h1 {
-        font-size: 2rem;
+        font-size: 1.75rem;
+      }
+
+      .hero h2 {
+        font-size: 1.875rem;
       }
 
       h2 {
@@ -450,7 +672,11 @@
       }
 
       .header-contact {
-        font-size: 0.875rem;
+        text-align: left;
+      }
+
+      .header-contact a {
+        justify-content: flex-start;
       }
 
       nav .container {
@@ -462,62 +688,16 @@
         font-size: 0.875rem;
       }
 
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .stats-grid,
+      .services-grid,
+      .expertise-grid,
+      .gallery {
+        grid-template-columns: 1fr;
       }
 
       .header-title {
         gap: 0.25rem;
       }
-
-      header .container {
-        flex-direction: column;
-        gap: 1.5rem;
-      }
-
-      .header-contact {
-        text-align: left;
-      }
-
-      .header-contact a {
-        justify-content: flex-start;
-      }
-    }
-
-    /* Gallery */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .gallery-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      overflow: hidden;
-      border-radius: 0.75rem;
-      background: var(--white);
-      transition: transform 0.2s;
-    }
-
-    .gallery-item:hover {
-      transform: translateY(-2px);
-    }
-
-    .gallery-image {
-      width: 100%;
-      height: 14rem;
-      object-fit: cover;
-      display: block;
-    }
-
-    .gallery-caption {
-      padding: 1rem;
-      font-size: 0.9rem;
-      line-height: 1.5;
-      color: var(--text-secondary);
     }
   </style>
 </head>
@@ -526,69 +706,389 @@
   <header>
     <div class="container">
       <div class="header-title">
-        <p>IT Manager & Systems Leader</p>
+        <p>IT Strategy & Transformation Partner</p>
         <h1>Matthew Ung</h1>
-        <p class="header-subtitle">IT Strategy • ERP Systems • Cloud Infrastructure • Cybersecurity</p>
+        <p class="header-subtitle">Helping growing foodservice businesses scale smartly through IT strategy, ERP solutions, and vendor partnerships</p>
       </div>
       <div class="header-contact">
         <a href="tel:+61431389881">+61 431 389 881</a>
         <a href="mailto:Ungmatt.au@gmail.com">Ungmatt.au@gmail.com</a>
-        <span>Sydney, NSW, Australia</span>
+        <span>Sydney, NSW</span>
       </div>
     </div>
   </header>
 
   <!-- Navigation -->
   <nav>
-    <div class="container">
-      <a href="#summary" class="nav-link active">Summary</a>
+    <div class="container-wide">
+      <a href="#hero" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#insights" class="nav-link">Insights</a>
       <a href="#experience" class="nav-link">Experience</a>
-      <a href="#gallery" class="nav-link">Gallery</a>
-      <a href="#skills" class="nav-link">Skills</a>
-      <a href="#education" class="nav-link">Education</a>
+      <a href="#contact" class="nav-link">Contact</a>
     </div>
   </nav>
 
   <!-- Main Content -->
   <main>
-    <div class="container">
-      <!-- Summary Section -->
-      <section id="summary">
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="container">
+        <div class="hero-headline">
+          <h2>IT that grows with your business</h2>
+          <p class="hero-subheadline">
+            For foodservice distributors scaling from startup to established player, the right IT systems and strategy are the difference between chaos and efficiency. I work with businesses like yours to implement systems that support growth, reduce costs, and improve visibility across your operations.
+          </p>
+          <a href="#contact" class="hero-cta">Start a conversation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
         <div class="section-label">
           <span class="section-label-line"></span>
-          <span class="section-label-text">Professional Overview</span>
+          <span class="section-label-text">Background</span>
         </div>
-        <h2>Professional Summary</h2>
+        <h2>Who I work with</h2>
 
-        <p class="summary-text">
-          IT leader with over four years' experience as IT Manager at NAFDA Limited, responsible for rebuilding and stabilising a mission-critical IT function supporting a $1.5B national foodservice network. Strong background in hybrid infrastructure, ERP ecosystems, system integration, and Microsoft 365 environments. Proven capability delivering complex transformation programs, modernising legacy platforms, and aligning technology strategy with business outcomes.
+        <p style="font-size: 1rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 1.5rem;">
+          I partner with foodservice distributors and supply chain businesses in the growth phase—companies with $10M to $500M+ revenue where IT decisions directly impact profitability, customer satisfaction, and operational resilience. Many of these businesses don't have a dedicated IT team yet, or they're overextended and need strategic guidance.
         </p>
 
-        <div class="stats-grid">
+        <p style="font-size: 1rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 2rem;">
+          I help fill that gap. Over 4+ years as IT Manager at NAFDA Limited (supporting a $1.5B national foodservice ecosystem) and prior ERP leadership at Marrickville Freezers, I've lived the challenges you face: legacy system chaos, costly integrations, vendor overload, and the pressure to do more with less.
+        </p>
+
+        <h3>What I bring to the table</h3>
+
+        <div class="expertise-grid">
+          <div class="expertise-item">
+            <strong>IT Strategy & Planning</strong>
+            <p>Roadmaps that align technology with business growth, not just reactive firefighting.</p>
+          </div>
+          <div class="expertise-item">
+            <strong>ERP & Systems Leadership</strong>
+            <p>Selection, migration, and optimization of systems like Dynamics 365 Business Central that scale with you.</p>
+          </div>
+          <div class="expertise-item">
+            <strong>eCommerce & Integration</strong>
+            <p>B2B ordering platforms and integrations (API, EDI, SFTP) that improve customer experience and reduce friction.</p>
+          </div>
+          <div class="expertise-item">
+            <strong>Change Management</strong>
+            <p>Making sure new systems actually get adopted and deliver ROI, not sit unused.</p>
+          </div>
+          <div class="expertise-item">
+            <strong>Vendor & MSP Selection</strong>
+            <p>Evaluating, negotiating, and managing partners so you're not stuck in bad contracts or overcharged.</p>
+          </div>
+          <div class="expertise-item">
+            <strong>Cybersecurity & Infrastructure</strong>
+            <p>Pragmatic security and cloud strategy that protects you without unnecessary complexity or cost.</p>
+          </div>
+        </div>
+
+        <div class="stats-grid" style="margin-top: 3rem;">
           <div class="stat-card">
             <div class="stat-value">4+</div>
-            <div class="stat-label">Years IT Management</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-value">15+</div>
-            <div class="stat-label">Years IT Experience</div>
+            <div class="stat-label">Years IT Leadership</div>
           </div>
           <div class="stat-card">
             <div class="stat-value">$1.5B</div>
             <div class="stat-label">Network Supported</div>
           </div>
           <div class="stat-card">
+            <div class="stat-value">15+</div>
+            <div class="stat-label">Years IT Experience</div>
+          </div>
+          <div class="stat-card">
             <div class="stat-value">Multiple</div>
             <div class="stat-label">Certifications</div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Experience Section -->
-      <section id="experience">
+    <!-- Services Section -->
+    <section id="services">
+      <div class="container">
         <div class="section-label">
           <span class="section-label-line"></span>
-          <span class="section-label-text">Work History</span>
+          <span class="section-label-text">How I help</span>
+        </div>
+        <h2>Services & Engagement Models</h2>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🏗️</div>
+            <h3>IT Strategy Consulting</h3>
+            <p>Multi-year IT roadmaps tailored to your growth stage, budget, and competitive challenges. From infrastructure to security to vendor strategy.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">⚙️</div>
+            <h3>ERP & Systems Implementation</h3>
+            <p>Leadership of Dynamics 365, Business Central, or other platforms—from selection through go-live and optimization.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">💻</div>
+            <h3>eCommerce & Integration</h3>
+            <p>B2B ordering platforms, API integrations, EDI/SFTP workflows, and integrations that reduce manual data entry and improve customer ordering experience.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🤝</div>
+            <h3>Vendor & MSP Management</h3>
+            <p>Help selecting, negotiating, and managing IT vendors—so you're getting fair value and the support you actually need.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🎯</div>
+            <h3>Change Management & Adoption</h3>
+            <p>Making sure your team embraces new systems. Change management is where most projects fail—I make sure yours don't.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🔒</div>
+            <h3>Cybersecurity & Risk</h3>
+            <p>Pragmatic security strategy, identity management, backup/DR, and compliance—protection that fits your business and budget.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Insights Section -->
+    <section id="insights">
+      <div class="container">
+        <div class="section-label">
+          <span class="section-label-line"></span>
+          <span class="section-label-text">Knowledge</span>
+        </div>
+        <h2>Industry Insights & Articles</h2>
+
+        <!-- Article 1: eCommerce for B2B Foodservice -->
+        <div class="article">
+          <h3>How eCommerce Transforms B2B Foodservice Distribution</h3>
+          <div class="article-meta">
+            <span>By Matthew Ung</span>
+            <span>Published 2025</span>
+          </div>
+          <div class="article-body">
+            <p>
+              In traditional B2B foodservice distribution, the ordering process is clunky: phone calls to order-takers, faxed orders, manual entry into the ERP, picking and packing, and constant back-and-forth on stock availability. It's slow, error-prone, and expensive.
+            </p>
+
+            <p>
+              <strong>The cost of manual ordering goes beyond time.</strong> Every manual entry is an opportunity for mistakes—wrong product code, wrong quantity, duplicate orders. These errors ripple through your warehouse, invoicing, and customer relationships. Customers get frustrated, your staff spends time fixing issues instead of delivering service, and you're leaving money on the table.
+            </p>
+
+            <h3 style="margin-top: 1.5rem; font-size: 1.1rem;">Why B2B eCommerce is different from B2C</h3>
+
+            <p>
+              B2B ordering has different rules. Your customers (restaurants, caterers, retailers) need bulk pricing, tiered discounts, account terms, and integration with their own systems. They're not buying one pack of chicken breast—they're placing orders of 50+ units with delivery schedules and custom pricing agreements.
+            </p>
+
+            <p>
+              A B2B platform that works lets your customers:
+            </p>
+
+            <ul>
+              <li><strong>Self-serve ordering 24/7</strong> — No more waiting for order-takers. Customers place orders on their schedule.</li>
+              <li><strong>See live stock and delivery windows</strong> — Transparency builds confidence. No more "sorry, we're out"—they see what's available and plan accordingly.</li>
+              <li><strong>Receive accurate, tiered pricing</strong> — Automatic discounts for volume, seasonal adjustments, promotional pricing—all applied correctly, every time.</li>
+              <li><strong>Access order history and manage accounts</strong> — Easier reordering, better planning, less phone tag.</li>
+              <li><strong>Integrate their systems with yours via API</strong> — For larger customers, direct system-to-system ordering reduces friction even further.</li>
+            </ul>
+
+            <h3 style="margin-top: 1.5rem; font-size: 1.1rem;">The business impact</h3>
+
+            <p>
+              When I led the eCommerce transition at Marrickville Freezers and later supported multiple member organizations at NAFDA, the results were consistent:
+            </p>
+
+            <ul>
+              <li><strong>25-40% reduction in order processing time</strong> — Less manual data entry, fewer errors, faster fulfillment.</li>
+              <li><strong>Higher order frequency and basket size</strong> — When ordering is effortless, customers order more often and in larger quantities.</li>
+              <li><strong>Improved customer retention</strong> — Customers who integrate with your ordering platform become stickier; they have skin in the game.</li>
+              <li><strong>Better data for your business</strong> — Real-time visibility into customer demand, seasonality, and trends means you can forecast better and manage inventory more efficiently.</li>
+              <li><strong>Reduced invoicing disputes</strong> — Fewer errors mean fewer arguments over what was ordered vs. what was delivered.</li>
+            </ul>
+
+            <h3 style="margin-top: 1.5rem; font-size: 1.1rem;">The catch: Integration matters more than the platform</h3>
+
+            <p>
+              Many foodservice distributors buy a shiny B2B eCommerce platform and then realize it's siloed—it doesn't talk to their ERP, their warehouse system, or their financial systems. Orders come in but still need manual intervention to fulfil. That's not a win.
+            </p>
+
+            <p>
+              <strong>The real value is integration.</strong> Your eCommerce platform must feed live product data, stock levels, and pricing to your customers in real-time. Customer orders must flow directly into your ERP and warehouse system for picking and fulfillment. Invoices and delivery confirmations must close the loop automatically.
+            </p>
+
+            <p>
+              This is where many projects fail—the platform vendor sells you a product, but nobody thinks about the integration work until it's too late. That's why selecting the right system and partner from day one matters.
+            </p>
+
+            <h3 style="margin-top: 1.5rem; font-size: 1.1rem;">Getting started: Questions to ask yourself</h3>
+
+            <ul>
+              <li>Are your order-takers spending more time on data entry than on customer service?</li>
+              <li>How much revenue are you leaving on the table due to manual ordering friction?</li>
+              <li>What would it be worth to have real-time inventory visibility for your customers?</li>
+              <li>Which of your customers would likely increase order frequency if it were easier?</li>
+              <li>How well does your current system integrate with a potential eCommerce platform?</li>
+            </ul>
+
+            <p style="margin-top: 1.5rem;">
+              If you're in the foodservice distribution space, eCommerce isn't a nice-to-have anymore—it's a competitive necessity. The right platform, properly integrated, transforms customer experience and operational efficiency.
+            </p>
+          </div>
+        </div>
+
+        <!-- Article 2: ERP Solutions and Scaling -->
+        <div class="article">
+          <h3>ERP Solutions: Scaling Your Business Without Systems Getting in the Way</h3>
+          <div class="article-meta">
+            <span>By Matthew Ung</span>
+            <span>Published 2025</span>
+          </div>
+          <div class="article-body">
+            <p>
+              Growing a foodservice distribution business is hard enough. When your ERP (Enterprise Resource Planning) system becomes the bottleneck instead of the enabler, it's even harder.
+            </p>
+
+            <p>
+              Many growing distributors face this crossroads: their legacy system (maybe System 77, Navision, or a spreadsheet-heavy setup) worked fine when you were smaller, but now it's limiting growth. Manual processes are choking the business. Reporting takes hours. Integration with eCommerce or vendors is a nightmare. It's time to move to something modern—but what?
+            </p>
+
+            <h3 style="margin-top: 1.5rem; font-size: 1.1rem;">The ERP landscape for foodservice distributors</h3>
+
+            <p>
+              If you're looking to scale, your main options are:
+            </p>
+
+            <ul>
+              <li><strong>Microsoft Dynamics 365 Business Central</strong> — Cloud-native, affordable, integrates seamlessly with Microsoft 365, Office, and Power BI. Scales well for mid-market distributors ($20M–$500M revenue). Strong foodservice industry templates.</li>
+              <li><strong>Dynamics NAV (on-premises)</strong> — If you're not ready for cloud but need something better than your current system. Mature, proven in distribution.</li>
+              <li><strong>Industry-specific platforms</strong> — Systems like Epicor or NetSuite built specifically for foodservice. More expensive but deeper industry functionality.</li>
+              <li><strong>Best-of-breed approach</strong> — Lightweight ERP core + specialized modules for WMS, BI, eCommerce, integrations. More complex but flexible.</li>
+            </ul>
+
+            <h3 style="margin-top: 1.5rem; font-size: 1.1rem;">Why most ERP migrations fail (and how to avoid it)</h3>
+
+            <p>
+              Here's what I see repeatedly: Companies pick an ERP for the features, then the implementation turns into a nightmare. Scope creeps. Data is messy. Timelines slip. Staff resist because nobody trained them properly. You launch with broken processes and a team that doesn't trust the system.
+            </p>
+
+            <p>
+              <strong>The real success factors aren't about the software—they're about the people and process.</strong>
+            </p>
+
+            <ul>
+              <li><strong>Start with process clarity.</strong> Before you migrate, map your current state honestly. What works? What doesn't? What's just "how we've always done it"? Most successful migrations I've led involved some process improvement—not because the new system forced it, but because the new system gave us the chance to do it right.</li>
+              <li><strong>Treat data migration like surgery, not a copy-paste.</strong> Your legacy system has years of accumulated cruft—obsolete products, closed vendors, bad master data. Migration is your chance to clean. Invest in data quality upfront; it saves months of pain after go-live.</li>
+              <li><strong>Plan change management from day one.</strong> The best ERP fails if your team doesn't adopt it. That means training (not just watching videos), sponsorship from leadership, quick wins to build confidence, and ongoing support post-launch.</li>
+              <li><strong>Integration architecture is not an afterthought.</strong> Your new ERP won't be an island. It needs to connect to your eCommerce platform, 3PL partners, accounting systems, reporting tools. Plan these integrations during vendor selection, not after.</li>
+              <li><strong>Go live with a pilot, not a big bang.</strong> Pick your simplest product line or a subset of customers. Let the team build confidence. Work out the bugs. Then expand. Less risky, less stressful, better results.</li>
+            </ul>
+
+            <h3 style="margin-top: 1.5rem; font-size: 1.1rem;">The true cost of an ERP migration</h3>
+
+            <p>
+              When distributors ask me "How much does an ERP cost?", the answer is: more than the software license. Budget for:
+            </p>
+
+            <ul>
+              <li>Software licensing (usually 3-10% of project cost)</li>
+              <li>Implementation partner (35-50% of project cost) — this is where the real work happens</li>
+              <li>Infrastructure and cloud hosting (10-15% of project cost)</li>
+              <li>Data migration and cleanup (10-20% of project cost) — often underestimated</li>
+              <li>Training and change management (10-20% of project cost)</li>
+              <li>Contingency (10-20% of project cost) — for scope changes, issues, extensions</li>
+            </ul>
+
+            <p>
+              A typical mid-market ERP project costs $500K–$2M+ depending on scope and complexity. Not cheap, but compared to the cost of staying on a limiting system? The ROI is usually 18-36 months through reduced labor, better inventory management, improved customer service, and faster decision-making.
+            </p>
+
+            <h3 style="margin-top: 1.5rem; font-size: 1.1rem;">When to move, and when to wait</h3>
+
+            <p>
+              <strong>You should move if:</strong>
+            </p>
+
+            <ul>
+              <li>Your current system can't keep up with business volume or complexity.</li>
+              <li>Manual workarounds are eating up hours every week.</li>
+              <li>You're planning major growth and your system can't scale.</li>
+              <li>You need better data visibility and reporting for decision-making.</li>
+              <li>Your system is at end-of-life and vendor support is disappearing.</li>
+            </ul>
+
+            <p>
+              <strong>You might wait if:</strong>
+            </p>
+
+            <ul>
+              <li>Your business is stable and your system is working fine (don't fix what isn't broken).</li>
+              <li>You're in the middle of a major restructure or acquisition—wait for dust to settle.</li>
+              <li>You're understaffed. ERP projects require dedicated internal focus.</li>
+              <li>You haven't secured budget and executive sponsorship yet.</li>
+            </ul>
+
+            <h3 style="margin-top: 1.5rem; font-size: 1.1rem;">A strategic approach</h3>
+
+            <p>
+              When I work with distributors on ERP strategy, we start with the business roadmap: Where do you want to be in 3, 5, 10 years? What are the growth constraints? What do customers and staff struggle with today? Then we work backwards to identify which systems and integrations will remove those constraints.
+            </p>
+
+            <p>
+              Sometimes that's a full ERP replacement. Sometimes it's a best-of-breed approach. Sometimes it's optimizing your current system with better integrations and automation. The point is: the system serves the strategy, not the other way around.
+            </p>
+
+            <p style="margin-top: 1.5rem;">
+              If you're thinking about ERP, don't start with vendors—start with your business needs. Once you're clear on those, the right system becomes obvious. And that's where I can help: aligning your IT decisions with your business reality.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+      <div class="container">
+        <div class="section-label">
+          <span class="section-label-line"></span>
+          <span class="section-label-text">Highlights</span>
+        </div>
+        <h2>Leadership & Industry Engagement</h2>
+
+        <div class="gallery">
+          <div class="gallery-item">
+            <img src="DSC00143.JPG" alt="Matthew presenting at NAFDA Members Conference" class="gallery-image">
+            <div class="gallery-caption">Presenting IT strategy at NAFDA Members Conference, Sydney 2023</div>
+          </div>
+          <div class="gallery-item">
+            <img src="20251030_165715.jpg" alt="Matthew at warehouse operations visit" class="gallery-image">
+            <div class="gallery-caption">Visiting warehouse operations to assess logistics infrastructure</div>
+          </div>
+          <div class="gallery-item">
+            <img src="31506776232107.jpeg" alt="Matthew at industry event networking" class="gallery-image">
+            <div class="gallery-caption">Networking at industry events with foodservice and IT peers</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-label">
+          <span class="section-label-line"></span>
+          <span class="section-label-text">Track Record</span>
         </div>
         <h2>Professional Experience</h2>
 
@@ -701,44 +1201,22 @@
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Gallery Section -->
-      <section id="gallery">
-        <div class="section-label">
-          <span class="section-label-line"></span>
-          <span class="section-label-text">Highlights</span>
-        </div>
-        <h2>Leadership & Industry Engagement</h2>
-
-        <div class="gallery">
-          <div class="gallery-item">
-            <img src="./DSC00143.JPG" alt="Matthew presenting at NAFDA Members Conference" class="gallery-image">
-            <div class="gallery-caption">Presenting IT strategy at NAFDA Members Conference, Sydney 2023</div>
-          </div>
-          <div class="gallery-item">
-            <img src="./20251030_165715.jpg" alt="Matthew at warehouse operations visit" class="gallery-image">
-            <div class="gallery-caption">Visiting warehouse operations to assess logistics infrastructure</div>
-          </div>
-          <div class="gallery-item">
-            <img src="./31506776232107.jpeg" alt="Matthew at industry event networking" class="gallery-image">
-            <div class="gallery-caption">Networking at industry events with foodservice and IT peers</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Skills Section -->
-      <section id="skills">
+    <!-- Skills Section -->
+    <section id="skills">
+      <div class="container">
         <div class="section-label">
           <span class="section-label-line"></span>
           <span class="section-label-text">Core Competencies</span>
         </div>
-        <h2>Technical Skills</h2>
+        <h2>Technical Skills & Expertise</h2>
 
         <div class="skills-group">
           <div class="skills-category">IT Strategy & Leadership</div>
           <div class="skills-list">
-            <span class="skill-tag">IT Strategy & Leadership</span>
+            <span class="skill-tag">IT Strategy</span>
             <span class="skill-tag">Microsoft 365 Migrations</span>
             <span class="skill-tag">Hybrid Infrastructure</span>
             <span class="skill-tag">Vendor Management</span>
@@ -767,7 +1245,7 @@
             <span class="skill-tag">SQL Server</span>
             <span class="skill-tag">Dynamics NAV</span>
             <span class="skill-tag">Dynamics 365 Business Central</span>
-            <span class="skill-tag">System77</span>
+            <span class="skill-tag">System 77</span>
             <span class="skill-tag">Power BI</span>
             <span class="skill-tag">Phocas BI</span>
           </div>
@@ -807,10 +1285,12 @@
             <span class="skill-tag">Mimecast</span>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Education Section -->
-      <section id="education">
+    <!-- Education Section -->
+    <section id="education">
+      <div class="container">
         <div class="section-label">
           <span class="section-label-line"></span>
           <span class="section-label-text">Credentials</span>
@@ -840,8 +1320,43 @@
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-label">
+          <span class="section-label-line"></span>
+          <span class="section-label-text">Let's Talk</span>
+        </div>
+        <h2>Ready to scale smarter?</h2>
+
+        <p style="font-size: 1rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 2rem; max-width: 42rem;">
+          Whether you're thinking about ERP, eCommerce, vendor selection, IT strategy, or just want to explore how to get more from your technology, I'm here to help. No jargon, no upselling—just practical advice grounded in real foodservice distribution experience.
+        </p>
+
+        <div class="services-grid" style="max-width: 42rem;">
+          <a href="tel:+61431389881" class="service-card" style="cursor: pointer; text-align: center;">
+            <div class="service-icon" style="font-size: 2.5rem;">📞</div>
+            <h3 style="font-size: 1rem;">Call</h3>
+            <p>+61 431 389 881</p>
+          </a>
+
+          <a href="mailto:Ungmatt.au@gmail.com" class="service-card" style="cursor: pointer; text-align: center;">
+            <div class="service-icon" style="font-size: 2.5rem;">✉️</div>
+            <h3 style="font-size: 1rem;">Email</h3>
+            <p>Ungmatt.au@gmail.com</p>
+          </a>
+
+          <div class="service-card" style="text-align: center;">
+            <div class="service-icon" style="font-size: 2.5rem;">📍</div>
+            <h3 style="font-size: 1rem;">Location</h3>
+            <p>Sydney, NSW</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->
@@ -849,20 +1364,19 @@
     <div class="container">
       <div>
         <div class="footer-name">Matthew Ung</div>
-        <div class="footer-title">IT Manager & Systems Leader – Sydney, NSW</div>
+        <div class="footer-title">IT Strategy & Transformation Partner – Sydney, NSW</div>
       </div>
       <a href="mailto:Ungmatt.au@gmail.com" class="footer-cta">
         <span>✉</span>
         <span>Get in Touch</span>
       </a>
       <div class="footer-divider">
-        © 2026 Matthew Ung. All rights reserved.
+        © 2025 Matthew Ung. All rights reserved.
       </div>
     </div>
   </footer>
 
   <script>
-    // Navigation active state
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('main section');
 
